@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 4</title>
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+  <script src="game/helpers.js"></script>
+  <script src="game/component.projectile.js"></script>
+  <script src="game/component.spawner.js"></script>
+  <script src="game/component.enemy.js"></script>
+  <script src="game/component.ship.js"></script>
+  <script src="game/component.shipgun.js"></script>
+  <script src="game/component.explosion.js"></script>
+  <script src="game/prymitive.projectile.js"></script>
+  <script src="game/prymitive.enemy.js"></script>
+  <script src="game/prymitive.explosion.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <a-scene spawner stats>
+    <a-assets>
+      <img id="sky" src="sky.jpg">
+      <img id="bullet" src="bullet.png">
+      <a-asset-item id="ship" src="spaceship.gltf"></a-asset-item>
+      <a-asset-item id="enemy" src="enemy.gltf"></a-asset-item>
+    </a-assets>
+    <a-sky src="#sky"></a-sky>
+    
+    <a-entity id="player" ship gltf-model="#ship" scale="0.2 0.2 0.2">
+      <a-entity shipgun position="-0.2 0 -0.3"></a-entity>
+      <a-entity shipgun position="0.2 0 -0.3"></a-entity>
+    </a-entity>
+
+    <a-entity vive-controls="hand: left"></a-entity>
+    <a-entity vive-controls="hand: right; model: false" id="ship-control"></a-entity>
+
+    <a-camera position="0 .2 1"></a-camera>
+
+  </a-scene>
+</body>
+</html>
