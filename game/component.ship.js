@@ -4,7 +4,7 @@ AFRAME.registerComponent('ship', {
     this.targetPosition = new THREE.Vector3();
     this.targetRotation = new THREE.Vector3();
     var self = this;
-    document.querySelectorAll('[vive-controls]').forEach(function(el){
+    document.querySelectorAll('[vive-controls], [oculus-touch-controls]').forEach(function(el){
       el.addEventListener('triggerdown', function(ev){
         self.shoot = true;
       });
